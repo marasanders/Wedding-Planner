@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701133425) do
+ActiveRecord::Schema.define(version: 20160701181321) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,20 +31,20 @@ ActiveRecord::Schema.define(version: 20160701133425) do
     t.string   "relationship"
     t.string   "email"
     t.string   "spouse_email"
-    t.boolean  "send_invitation"
+    t.boolean  "send_invitation",   default: true
     t.string   "gift_received"
-    t.boolean  "thank_you_sent"
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+    t.boolean  "thank_you_sent",    default: false
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
   end
 
   create_table "place_cards", force: :cascade do |t|
     t.string   "name"
     t.integer  "table_number"
-    t.boolean  "print"
+    t.boolean  "print",        default: true
     t.integer  "guest_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
   end
 
   add_index "place_cards", ["guest_id"], name: "index_place_cards_on_guest_id", using: :btree
