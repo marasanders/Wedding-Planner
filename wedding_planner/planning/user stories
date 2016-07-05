@@ -1,0 +1,19 @@
+User Stories
+
+User will visit welcome and enter their own profile - the names of the wedding parties, wedding date ..
+User will be able to Create an invited guests list/data base
+User will be able to Add Guests - including mailing, email, spouse information
+User will be able to Read Guests
+User will be able to Update Guests
+User will be able to Delete Guests
+User will be able to enter place card information for Guests
+
+Bronze
+User will create edit delete Guest list
+User will  create edit delete Place Cards
+
+Silver
+User will be able to enter information about the wedding
+
+Gold
+Improve on above with look and functionality - including program intuition
