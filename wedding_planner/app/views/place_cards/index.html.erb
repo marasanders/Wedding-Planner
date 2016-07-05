@@ -1,0 +1,9 @@
+<h1>Here are the place_cards</h1>
+<% @place_cards.each do |place_card| %>
+    <li><%= link_to "#{place_card.name} - #{place_card.table_number}#{place_card.guest.mailing_title}", place card %></li>
+  <% end %>
+</ul>
+  <div>
+    <%= link_to place_card.name, place_card %>
+  </div>
+  <% end %>

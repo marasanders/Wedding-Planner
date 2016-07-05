@@ -1,0 +1,15 @@
+<html>
+<form class="form-horizontal" role="form">
+  <h1></h1>
+  <h1 class="text-center">Guest List</h1>
+  <% @guests.each do |guest| %>
+    <div class="guest">
+      <h2 class="text-center"><%= link_to guest.mailing_title, guest %></h2>
+    <div>
+  <% end %>
+</form>
+<nav>
+  <h2><%= link_to "Add Guest", new_guest_path %></h2>
+</nav>
+</body>
+</html>

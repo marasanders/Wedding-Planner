@@ -1,0 +1,6 @@
+<h1>Here are the place_cards</h1>
+<% @place_cards.each do |place_card| %>
+  <div>
+    <%= link_to place_card.name, place_card %>
+  </div>
+  <% end %>

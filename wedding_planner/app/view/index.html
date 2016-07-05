@@ -1,0 +1,6 @@
+<h1>Guest List</h1>
+<% @guests.each do |guest| %>
+  <div class="house">
+    <h2><%= link_to guest.mailing_title, guest %></h2>
+  <div>
+<% end %>

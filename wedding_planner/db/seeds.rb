@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 Guest.destroy_all
 PlaceCard.destroy_all
 
@@ -21,7 +22,7 @@ john = Guest.create(mailing_title:"Mr. & Mrs. John Smith", first_name: "John", l
                           gift_received: "",thank_you_sent:false )
 
 
-robinplacecard = PlaceCard.create(name: "Mr. Robert Thomas", table_number:0, print: true, guest_id: robin)
-anneplacecard = PlaceCard.create(name: "Mrs. Anne Thomas", table_number:0, print: true, guest_id: robin)
-johnplacecard = PlaceCard.create(name: "Mr. John Smith", table_number:1, print: true, guest_id: john)
-janeplacecard = PlaceCard.create(name: "Mrs. Jane Smith", table_number:1, print: true, guest_id: john)
+robinplacecard = PlaceCard.create(name: "Mr. Robert Thomas", table_number:0, print: true, guest: robin)
+anneplacecard = PlaceCard.create(name: "Mrs. Anne Thomas", table_number:0, print: true, guest: robin)
+johnplacecard = PlaceCard.create(name: "Mr. John Smith", table_number:1, print: true, guest: john)
+janeplacecard = PlaceCard.create(name: "Mrs. Jane Smith", table_number:1, print: true, guest: john)

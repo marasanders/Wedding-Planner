@@ -1,0 +1,7 @@
+<h1>Edit Place Cards</h1>
+<% @place_cards.each do |place_card| %>
+  <div>
+    <%= link_to place_card.name, place_card %>
+  </div>
+  <% end %>
+  <%= link_to "Delete!", @placecard, method: :delete, class: "delete" %>
