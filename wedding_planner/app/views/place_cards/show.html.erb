@@ -1,6 +1,7 @@
-<h1>Here are the place_cards</h1>
-<% @place_cards.each do |place_card| %>
-  <div>
-    <%= link_to place_card.name, place_card %>
-  </div>
+<h2><%= @guest.mailing_title %> <%= link_to "(edit guest information)", edit_guest_path(@guest) %></h2>
+
+<h3>Place Cards <%= link_to "add new", new_guest_place_card_path(@guest) %></h3>
+<ul>
+<% @guest.place_cards.each do |place_card| %>
+    <%= link_to "#{place_card.name} - #{place_card.table_number}", edit_guest_place_card_path(@guest,place_card) %>
   <% end %>

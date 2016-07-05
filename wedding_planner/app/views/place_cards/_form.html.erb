@@ -1,0 +1,16 @@
+<%= form_for[@guest,@place_card] do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :table %>
+  <%= f.text_field :table_number %>
+
+  <div class="checkbox">
+    <label><input type="checkbox"> print? </label>
+    <%= f.check_box :print %>
+  </div>
+
+  <%= f.submit %>
+
+<% end %>

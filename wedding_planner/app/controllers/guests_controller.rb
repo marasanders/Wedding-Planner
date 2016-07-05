@@ -15,7 +15,7 @@ end
 
   def create
     @guest = Guest.create!(guest_params)
-    redirect_to @guest
+    redirect_to guests_path
   end
 
   # edit
@@ -27,7 +27,7 @@ end
   def update
     @guest = Guest.find(params[:id])
     @guest.update(guest_params)
-    redirect_to guest_path(@guest)
+    redirect_to guests_path
   end
 
   # destroy

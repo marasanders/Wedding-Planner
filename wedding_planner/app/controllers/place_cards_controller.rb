@@ -2,7 +2,8 @@ class PlaceCardsController < ApplicationController
 
   # index
   def index
-    @place_cards = PlaceCard.all
+    @guest = Guest.find(params[:guest_id])
+    @place_cards = @guest.place_cards
   end
 
   # new
@@ -15,34 +16,35 @@ class PlaceCardsController < ApplicationController
   # create
   def create
     @guest = Guest.find(params[:guest_id])
-    @placecard = @guest.place_cards.create!(place_card_params)
-    redirect_to [@guest,@placecard]
+    @place_card = @guest.place_cards.create!(place_card_params)
+    redirect_to [@guest,@place_card]
   end
 
   #show
   def show
+    @guest = Guest.find(params[:guest_id])
     @place_card = PlaceCard.find(params[:id])
   end
 
   # edit
   def edit
     @guest = Guest.find(params[:guest_id])
-    @placecard = @guest.place_cards.find(params[:id])
+    @place_card = @guest.place_cards.find(params[:id])
   end
 
   # update
   def update
     @guest = Guest.find(params[:guest_id])
-    @placecard = @guest.place_cards.find(params[:id])
-    @placecard.update(place_card_params)
-    redirect_to [@guest,@placecard]
+    @place_card = @guest.place_cards.find(params[:id])
+    @place_card.update(place_card_params)
+    redirect_to [@guest,@place_card]
   end
 
   # destroy
   def destroy
     @guest = Guest.find(params[:guest_id])
-    @placecard = @guest.place_cards.find(params[:id])
-    @placecard.destroy
+    @place_card = @guest.place_cards.find(params[:id])
+    @place_card.destroy
     redirect_to @guest
   end
 

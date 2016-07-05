@@ -1,20 +1,16 @@
-<h1>New Place Cards for <%= link_to @guest.mailing_title, @guest %></h1>
-<% @place_cards.each do |place_card| %>
-  <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+<h1>New Place Cards </h1>
 
-    <%= f.label :table number %>
-    <%= f.text_field :table_number %>
+<%= form_for([@guest,@place_card]) do |f| %>
 
-    <div class="checkbox">
-      <label><input type="checkbox"> print? </label>
-      <%= f.boolean :print %>
-    </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" class="btn btn-warning" name="submit" id="submit">Submit</button>
-      </div>        
-  </div>
-  <% end %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :table %>
+  <%= f.text_field :table_number %>
+
+  <%= f.label :print %>
+  <%= f.check_box :print %>
+
+  <%= f.submit %>
+
+<% end %>

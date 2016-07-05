@@ -5,7 +5,7 @@
   <h1 class="text-center">Guest List</h1>
   <% @guests.each do |guest| %>
     <div class="guest">
-      <h2 class="text-center"><%= link_to guest.mailing_title, guest %></h2>
+      <h2 class="text-center"><%= link_to guest.mailing_title, edit_guest_path(guest) %><%= link_to "......Place Cards", guest_place_cards_path(guest) %></h2>
     <div>
   <% end %>
 </form>

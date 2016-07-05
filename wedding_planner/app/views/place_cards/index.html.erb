@@ -1,9 +1,12 @@
-<h1>Here are the place_cards</h1>
-<% @place_cards.each do |place_card| %>
-    <li><%= link_to "#{place_card.name} - #{place_card.table_number}#{place_card.guest.mailing_title}", place card %></li>
-  <% end %>
-</ul>
+<h1>Place Cards</h1>
+<% if @guest.place_cards.length >  0 %>
+       <% @guest.place_cards.each do |place_card| %>
+       <ul>
+         <%= link_to "#{place_card.name}  #{place_card.table_number}", edit_guest_place_card_path(@guest,place_card) %>
+      </ul>
+       <% end %>
+<% end %>
+
   <div>
-    <%= link_to place_card.name, place_card %>
+    <h2><%= link_to "Add Place Cards", new_guest_place_card_path(@guest) %></h2>
   </div>
-  <% end %>

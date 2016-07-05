@@ -1,7 +1,20 @@
 <h1>Edit Place Cards</h1>
-<% @place_cards.each do |place_card| %>
-  <div>
-    <%= link_to place_card.name, place_card %>
-  </div>
-  <% end %>
-  <%= link_to "Delete!", @placecard, method: :delete, class: "delete" %>
+
+<%= form_for([@guest,@place_card]) do |f| %>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :table %>
+  <%= f.text_field :table_number %>
+
+  <%= f.label :print %>
+  <%= f.check_box :print %>
+
+
+  <%= f.submit %>
+
+<% end %>
+
+
+<h3><%= link_to "Delete!", [@guest,@place_card], method: :delete, class: "delete" %></h3>
