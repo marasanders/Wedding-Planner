@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
 
-  root to: "guests#index"
+  root to: "welcome#index"
   resources :guests do
-  resources :place_cards
-end
+    resources :place_cards
+  end
   resources :users
+  resource  :session
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

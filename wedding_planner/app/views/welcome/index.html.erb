@@ -1,0 +1,7 @@
+<nav>
+  <% if @current_user %>
+       <h2 id = "ultimate-orange"><span class="pull-left"><%= link_to "Welcome, #{@current_user.username}!", user_path(@current_user) %></span><span class="pull-right"><%= link_to "Sign Out", session_path, method: :delete %></span></h2>
+    <% else %>
+      <h2 id = "ultimate-orange"><span class="pull-left"><%= link_to "Sign Up", new_user_path %></span><span class="pull-right"><%= link_to "Sign In", new_session_path %></span></h2>
+    <% end %>
+</nav>

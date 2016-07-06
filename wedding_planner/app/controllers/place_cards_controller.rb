@@ -8,6 +8,7 @@ class PlaceCardsController < ApplicationController
 
   # new
   def new
+    redirect_to root_path unless @current_user
     @guest = Guest.find(params[:guest_id])
     @place_card = @guest.place_cards.new
   end
@@ -15,6 +16,7 @@ class PlaceCardsController < ApplicationController
 
   # create
   def create
+    redirect_to root_path unless @current_user
     @guest = Guest.find(params[:guest_id])
     @place_card = @guest.place_cards.create!(place_card_params)
     redirect_to [@guest,@place_card]
@@ -28,12 +30,14 @@ class PlaceCardsController < ApplicationController
 
   # edit
   def edit
+    redirect_to root_path unless @current_user
     @guest = Guest.find(params[:guest_id])
     @place_card = @guest.place_cards.find(params[:id])
   end
 
   # update
   def update
+    redirect_to root_path unless @current_user
     @guest = Guest.find(params[:guest_id])
     @place_card = @guest.place_cards.find(params[:id])
     @place_card.update(place_card_params)
@@ -42,6 +46,7 @@ class PlaceCardsController < ApplicationController
 
   # destroy
   def destroy
+    redirect_to root_path unless @current_user
     @guest = Guest.find(params[:guest_id])
     @place_card = @guest.place_cards.find(params[:id])
     @place_card.destroy

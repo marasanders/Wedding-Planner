@@ -10,10 +10,12 @@ class GuestsController < ApplicationController
 
   # new
 def new
+  redirect_to root_path unless @current_user
   @guest = Guest.new
 end
 
   def create
+    redirect_to root_path unless @current_user
     @guest = Guest.new(guest_params)
     if @guest.save
        redirect_to guests_path
@@ -24,11 +26,14 @@ end
 
   # edit
   def edit
+    binding.pry
+    redirect_to root_path unless @current_user
     @guest = Guest.find(params[:id])
   end
 
   # update
   def update
+    redirect_to root_path unless @current_user
     @guest = Guest.find(params[:id])
     @guest.update(guest_params)
     redirect_to guests_path
@@ -36,6 +41,7 @@ end
 
   # destroy
   def destroy
+    redirect_to root_path unless @current_user
     @guest = Guest.find(params[:id])
     @guest.destroy
     redirect_to guests_path
