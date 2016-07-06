@@ -43,21 +43,19 @@
 <div class = "invisible">
   .
 </div>
-<div class="col-sm-4">
-  <label class="radio-inline">
-    <input type="radio" name="relationship" id="male" value="Bride Family"> Bride Family
-  </label>
-  <label class="radio-inline">
-    <input type="radio" name="relationship" id="male" value="Bride Friend"> Bride Friend
-  </label>
-  <label class="radio-inline">
-    <input type="radio" name="relationship" id="male" value="acquaintance"> Professional Aquaintance
-  </label>
-</div>
-<%= radio_button_tag(:relationship, "Bride Family") %>
-<%= label_tag(:relationship, "Bride Family") %>
-  <%= f.label :relationship %>
-  <%= f.text_field :relationship %>
+  <%= f.radio_button :relationship, "Bride Family" %>
+  <%= f.label :relationship, "Bride Family" %>
+  <%= f.radio_button :relationship, "Bride Friend" %>
+  <%= f.label :relationship, "Bride Friend" %>
+  <%= f.radio_button :relationship, "Groom Family" %>
+  <%= f.label :relationship, "Groom Family" %>
+  <%= f.radio_button :relationship, "Groom Friend" %>
+  <%= f.label :relationship, "Groom Friend" %>
+  <%= f.radio_button :relationship, "Friend" %>
+  <%= f.label :relationship, "Friend" %>
+  <div class = "invisible">
+    .
+  </div>
   <%= f.label :email %>
   <%= f.text_field :email%>
   <%= f.label :spouse_email %>
