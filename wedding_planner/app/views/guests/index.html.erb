@@ -1,8 +1,14 @@
 <!DOCTYPE html>
 <html>
 <form class="form-horizontal" role="form">
-  <h1></h1>
-  <h1 class="text-center" id = "ultimate-orange">Guest List</h1>
+  <div class = "container-fluid">
+    <div class = "col-md-4"></div>
+      <div class = "col-md-4">
+         <h1 class="text-center" id = "ultimate-orange">Guest List</h1>
+      </div>
+        <div class = "col-md-4"></div>
+ </div>
+
   <% @guests.each do |guest| %>
   <div class="row">
       <h4><div class="col-sm-1"></div><div class="col-sm-1"></div><div class="col-sm-1"></div><div class="col-sm-4"><%= link_to guest.mailing_title, edit_guest_path(guest)%></div><div class="col-sm-4"><%= link_to "Input Place Cards", guest_place_cards_path(guest)%></div></h4>
@@ -12,6 +18,11 @@
 <nav>
   <h2 id = "ultimate-orange"><%= link_to "Add Guest", new_guest_path %></h2>
 </nav>
+<nav>
+  <h2 id = "ultimate-orange"><span class="pull-left"><%= link_to "Sign In", users_path %></span><span class="pull-right"><%= link_to "Sign Up", new_user_path %></span></h2>
+</nav>
+
+<p><%= @user %></p>
 
 <%= yield %>
 
