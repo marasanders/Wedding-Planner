@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160701181321) do
+ActiveRecord::Schema.define(version: 20160706171626) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20160701181321) do
     t.boolean  "thank_you_sent",    default: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false
+    t.integer  "user_id"
   end
 
   create_table "place_cards", force: :cascade do |t|
@@ -48,6 +49,11 @@ ActiveRecord::Schema.define(version: 20160701181321) do
   end
 
   add_index "place_cards", ["guest_id"], name: "index_place_cards_on_guest_id", using: :btree
+
+  create_table "users", force: :cascade do |t|
+    t.string "username"
+    t.string "password"
+  end
 
   add_foreign_key "place_cards", "guests"
 end

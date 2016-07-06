@@ -8,3 +8,5 @@
     </div>
   </div>
 </div>
+
+  <%= image_tag("heart vine right.png") %>  <%= image_tag("heart vine left.png") %>
