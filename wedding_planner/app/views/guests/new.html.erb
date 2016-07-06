@@ -1,14 +1,32 @@
-<h2>New Guest</h2>
+<h2  class="text-center" id = "ultimate-orange">New Guest</h2>
+
+<% if @guest.errors.any? %>
+  <% @guest.errors.full_messages.each do |message| %>
+  <div class="alert alert-danger">
+  <strong>SORRY! </strong><%= message %></div>
+  <% end %>
+<% end %>
 
 <%= form_for @guest do |f| %>
   <%= f.label :mailing_title %>
   <%= f.text_field :mailing_title %>
+  <<div class = "invisible">
+    ,
+  </div>
+  <div>
   <%= f.label :first_name %>
   <%= f.text_field :first_name %>
   <%= f.label :last_name %>
   <%= f.text_field :last_name %>
   <%= f.label :spouse_first_name %>
   <%= f.text_field :spouse_first_name %>
+  <%= f.label :spouse_last_name %>
+  <%= f.text_field :spouse_last_name %>
+</div>
+<div class = "invisible">
+.
+</div>
+<div>
   <%= f.label :address_line1 %>
   <%= f.text_field :address_line1 %>
   <%= f.label :address_line2 %>
@@ -21,12 +39,19 @@
   <%= f.text_field :zip %>
   <%= f.label :country %>
   <%= f.text_field :country %>
+</div>
+<div class = "invisible">
+  .
+</div>
   <%= f.label :relationship %>
   <%= f.text_field :relationship %>
   <%= f.label :email %>
   <%= f.text_field :email%>
   <%= f.label :spouse_email %>
   <%= f.text_field :spouse_email%>
+  <div class = "invisible">
+    ,
+  </div>
   <%= f.label :send_invitation %>
   <%= f.check_box :send_invitation %>
   <%= f.label :gift_received %>
@@ -34,5 +59,17 @@
   <%= f.label :thank_you_sent%>
   <%= f.check_box :thank_you_sent %>
 
-  <%= f.submit %>
+  <div class = "invisible">
+    .
+  </div>
+
+  <h5 class="text-center" id = "ultimate-orange">
+    <%= f.submit %>
+  </h5>
 <% end %>
+<div class = "invisible">
+.
+</div>
+<nav>
+  <h5 class="text-center"id = "ultimate-orange"><%= link_to "Back to Home Page", guests_path%></h5>
+</nav>

@@ -13,3 +13,23 @@
  *= require_tree .
  *= require_self
  */
+
+ .invisible {
+   color: beige;
+ }
+
+ #ultimate {
+   font-family: 'Cinzel Decorative', cursive;
+   font-family: "Cinzel Decorative";
+   font-weight: bold;
+   font-size: 35px;
+   color: rgb(53, 11, 150);
+ }
+
+ #ultimate-orange {
+   font-family: 'Cinzel Decorative', cursive;
+   font-family: "Cinzel Decorative";
+   font-weight: bold;
+   font-size: 30px;
+   color: rgb(132, 53, 143);
+ }

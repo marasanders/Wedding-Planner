@@ -14,8 +14,12 @@ def new
 end
 
   def create
-    @guest = Guest.create!(guest_params)
-    redirect_to guests_path
+    @guest = Guest.new(guest_params)
+    if @guest.save
+       redirect_to guests_path
+    else
+      render "new"
+    end
   end
 
   # edit

@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href='https://fonts.googleapis.com/css?family=Cinzel+Decorative:400,700,900' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
@@ -14,7 +15,10 @@
 <body>
 
 <div class="container-fluid">
-  <h1 class="text-center">The Ultimate Wedding Planner</h1>
+<style type="text/css">
+   body { background: beige; !important; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+</style>
+  <h1 class="text-center" id="ultimate">The Ultimate Wedding Planner</h1>
   <p></p>
 </div>
 

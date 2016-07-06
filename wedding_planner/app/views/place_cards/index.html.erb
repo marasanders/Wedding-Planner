@@ -1,12 +1,18 @@
-<h1>Place Cards</h1>
-<% if @guest.place_cards.length >  0 %>
+  <h1 class="text-center" id = "ultimate-orange">Place Cards</h1>
+<h3 class="text-center"><% if @guest.place_cards.length >  0 %>
        <% @guest.place_cards.each do |place_card| %>
        <ul>
-         <%= link_to "#{place_card.name}  #{place_card.table_number}", edit_guest_place_card_path(@guest,place_card) %>
+         <%= link_to "#{place_card.name} - table number -  #{place_card.table_number}", edit_guest_place_card_path(@guest,place_card) %>
       </ul>
        <% end %>
 <% end %>
+</h3>
 
   <div>
-    <h2><%= link_to "Add Place Cards", new_guest_place_card_path(@guest) %></h2>
+    <h2 class="text-center" id="ultimate-orange">
+      <%= link_to "Add New Place Cards", new_guest_place_card_path(@guest) %>
+    </h2>
   </div>
+  <nav>
+    <h4><%= link_to "Back to Home Page", guests_path%></h4>
+  </nav>

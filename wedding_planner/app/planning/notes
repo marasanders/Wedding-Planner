@@ -1,0 +1,10 @@
+<div class="paragraphs">
+  <div class="row">
+    <div class="span4">
+      <img style="float:right" src="Users/marasanders/wdi/projects/Wedding-Planner/app/assets/images/heart vine right.png"/>
+      <img style="float:left" src="Users/marasanders/wdi/projects/Wedding-Planner/app/assets/images/heart vine left.png"/>
+      <div class="content-heading">  <h1 class="text-center" id="ultimate">The Ultimate Wedding Planner</h1>
+      <p style="clear:both">
+    </div>
+  </div>
+</div>
