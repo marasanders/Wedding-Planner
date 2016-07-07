@@ -15,8 +15,7 @@ class UsersController < ApplicationController
  def create
     @user = User.create(user_params)
     session[:user_id] = @user.id
-    @guests = @current_user.guests
-    redirect_to guests_path(@guest)
+    redirect_to guests_path
   end
 
   def edit
@@ -28,7 +27,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
       redirect_to root_path unless @current_user == @user
     @user.update(user_params)
-    redirect_to guests_path
+    redirect_to user_path(@user)
   end
 
 

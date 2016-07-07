@@ -27,7 +27,6 @@ end
 
   # edit
   def edit
-    binding.pry
     redirect_to root_path unless @current_user
     @guest = Guest.find(params[:id])
   end

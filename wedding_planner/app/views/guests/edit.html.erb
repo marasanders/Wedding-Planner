@@ -36,8 +36,19 @@
 <div class = "invisible">
   .
 </div>
-  <%= f.label :relationship %>
-  <%= f.text_field :relationship %>
+  <%= f.radio_button :relationship, "Bride Family" %>
+  <%= f.label :relationship, "Bride Family" %>
+  <%= f.radio_button :relationship, "Bride Friend" %>
+  <%= f.label :relationship, "Bride Friend" %>
+  <%= f.radio_button :relationship, "Groom Family" %>
+  <%= f.label :relationship, "Groom Family" %>
+  <%= f.radio_button :relationship, "Groom Friend" %>
+  <%= f.label :relationship, "Groom Friend" %>
+  <%= f.radio_button :relationship, "Friend" %>
+  <%= f.label :relationship, "Friend" %>
+  <div class = "invisible">
+    .
+  </div>
   <%= f.label :email %>
   <%= f.text_field :email%>
   <%= f.label :spouse_email %>

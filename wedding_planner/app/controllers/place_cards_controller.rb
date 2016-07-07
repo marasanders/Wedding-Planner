@@ -50,7 +50,7 @@ class PlaceCardsController < ApplicationController
     @guest = Guest.find(params[:guest_id])
     @place_card = @guest.place_cards.find(params[:id])
     @place_card.destroy
-    redirect_to @guest
+    redirect_to guests_path
   end
 
   private

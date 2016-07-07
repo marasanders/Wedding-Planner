@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       if User.exists?(username: input_username)
         @user = User.find_by(username: input_username)
         if @user.password === params[:user][:password]
-          puts "You're signed in!"
+          flash.now[:notice] = "You're signed in!"
           session[:user_id] = @user.id
           @guest =  @user.guests
           redirect_to guests_path(@guest)
