@@ -15,19 +15,20 @@ class UsersController < ApplicationController
  def create
     @user = User.create(user_params)
     session[:user_id] = @user.id
-    redirect_to root_path
+    @guests = @current_user.guests
+    redirect_to guests_path(@guest)
   end
 
   def edit
     @user = User.find(params[:id])
-      redirect_to root_url unless @current_user == @user
+      redirect_to root_path unless @current_user == @user
   end
 
   def update
     @user = User.find(params[:id])
-      redirect_to root_url unless @current_user == @user
+      redirect_to root_path unless @current_user == @user
     @user.update(user_params)
-    redirect_to user_path(@user)
+    redirect_to guests_path
   end
 
 

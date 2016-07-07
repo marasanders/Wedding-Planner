@@ -1,7 +1,8 @@
 class GuestsController < ApplicationController
 
   def index
-    @guests = Guest.all
+    redirect_to root_path unless @current_user
+    @guests = @current_user.guests
   end
 
   def show
@@ -11,12 +12,12 @@ class GuestsController < ApplicationController
   # new
 def new
   redirect_to root_path unless @current_user
-  @guest = Guest.new
+  @guest = @current_user.guests.new
 end
 
   def create
     redirect_to root_path unless @current_user
-    @guest = Guest.new(guest_params)
+    @guest = @current_user.guests.new(guest_params)
     if @guest.save
        redirect_to guests_path
     else

@@ -8,3 +8,7 @@
 
    <%= f.submit "Submit" %>
  <% end %>
+    <h2 id = "ultimate-orange"><span class="pull-left"><%= link_to "Back to Home Page", root_path%></span><span class="pull-right"><%= @current_user.username %> <%= link_to(" (edit)", edit_user_path(@current_user))%></span></h2>
+ <nav>
+   <h4><%= link_to "Back to Home Page", root_path%></h4>
+ </nav

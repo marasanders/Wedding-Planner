@@ -1,4 +1,4 @@
 <h2><%= @guest.mailing_title %> <%= link_to("(edit)", edit_guest_path(@guest)) if @current_user %></h2>
-  <nav>
-    <h2><%= link_to "Add Guest", new_guest_path %></h2>
-  </nav>
+<nav>
+   <h2 id = "ultimate-orange"><span class="pull-left"><%= link_to "Add Guest", new_guest_path %></span><span class="pull-right"><%= link_to "Sign Out", session_path, method: :delete %></span></h2>
+</nav>

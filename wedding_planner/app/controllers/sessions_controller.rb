@@ -11,7 +11,8 @@ class SessionsController < ApplicationController
         if @user.password === params[:user][:password]
           puts "You're signed in!"
           session[:user_id] = @user.id
-          redirect_to root_path
+          @guest =  @user.guests
+          redirect_to guests_path(@guest)
         else
           puts "Wrong password!"
           redirect_to new_session_path

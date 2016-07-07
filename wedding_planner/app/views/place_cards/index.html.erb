@@ -1,9 +1,16 @@
-  <h1 class="text-center" id = "ultimate-orange">Place Cards</h1>
+<h1 class="text-center" id = "ultimate-orange">Place Cards</h1>
 <h3 class="text-center"><% if @guest.place_cards.length >  0 %>
        <% @guest.place_cards.each do |place_card| %>
-       <ul>
-         <%= link_to "#{place_card.name} - table number -  #{place_card.table_number}", edit_guest_place_card_path(@guest,place_card) %>
-      </ul>
+    <form class="form-horizontal" role="form">
+       <div class = "row">
+         <div class = "container-fluid">
+             <div class = "col-md-1"></div>
+             <div class = "col-md-1"></div>
+             <div class = "col-md-1"></div>
+                  <h4 class = "col-md-6" id = "ultimate-orange-smaller"><span class="pull-left"> <%= link_to "#{place_card.name}", edit_guest_place_card_path(@guest,place_card) %></span> <span class="pull-right"> table number - <%= "#{place_card.table_number}"%></span></h4>
+            </div>
+           </div>
+          </div>
        <% end %>
 <% end %>
 </h3>
@@ -14,5 +21,5 @@
     </h2>
   </div>
   <nav>
-    <h4><%= link_to "Back to Home Page", guests_path%></h4>
+    <h4 id="ultimate-orange"><span class="pull-left"><%= link_to "Back to Home Page", guests_path%></span></h4>
   </nav>

@@ -1,15 +1,14 @@
-<h2 class="text-center"><%= @guest.mailing_title %> <%= link_to "(edit guest information)", edit_guest_path(@guest) %></h2>
+<h3  class="text-center" id = "ultimate-orange"><%= @guest.mailing_title %>'s Place Cards</h3>
 
-<h3  class="text-center">Place Cards <%= link_to "add new", new_guest_place_card_path(@guest) %></h3>
-
-<h3 class="text-center"><% if @guest.place_cards.length >  0 %>
+ <% if @guest.place_cards.length >  0 %>
      <% @guest.place_cards.each do |place_card| %>
     <ul>
-       <%= link_to "#{place_card.name} - table number -  #{place_card.table_number}", edit_guest_place_card_path(@guest,place_card) %>
+       <h3  class="text-center" id = "ultimate-orange-smaller"><%= link_to "#{place_card.name} - table number -  #{place_card.table_number}", edit_guest_place_card_path(@guest,place_card) %></h3>
    </ul>
    <% end %>
 <% end %>
+<h3  class="text-center" id = "ultimate-orange"><%= link_to "Add A New Place Card", new_guest_place_card_path(@guest) %></h3>
 </h3>
 <nav>
-  <h4><%= link_to "Back to Home Page", guests_path%></h4>
+  <h3 id = "ultimate-orange"><%= link_to "Back to Home Page", guests_path%></hs>
 </nav>
