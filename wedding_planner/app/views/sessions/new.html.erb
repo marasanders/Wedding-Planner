@@ -1,4 +1,4 @@
-<h2>Sign In</h2>
+<h2  class="text-center" id = "ultimate-orange">Sign In</h2>
  <%= form_for @user, url: session_path, method: :post do |f| %>
    <%= f.label :username %>
    <%= f.text_field :username %>
@@ -8,4 +8,4 @@
 
    <%= f.submit "Submit" %>
  <% end %>
-    <h2 id = "ultimate-orange"><span class="pull-left"><%= link_to "Back to Home Page", root_path%></h2>
+    <h2><span id="ultimate-orange" class="pull-left"><%= link_to "Back to Home Page", root_path%></span></h2>

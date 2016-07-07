@@ -1,4 +1,4 @@
-<h2>Sign Up</h2>
+<h2 id = "ultimate-orange">Sign Up</h2>
 <%= form_for @user do |f| %>
  <%= f.label :username %>
  <%= f.text_field :username %>
@@ -9,5 +9,5 @@
  <%= f.submit "Submit" %>
 <% end %>
 <nav>
-  <h4><%= link_to "Back to Home Page", root_path%></h4>
+  <h2><span id="ultimate-orange" class="pull-left"><%= link_to "Back to Home Page", root_path%></span></h2>
 </nav>
