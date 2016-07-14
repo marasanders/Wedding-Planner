@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-
+  # NHO: nice job rolling your own User Auth!
     def new
       @user = User.new
     end
@@ -14,18 +14,18 @@ class SessionsController < ApplicationController
           @guest =  @user.guests
           redirect_to guests_path(@guest)
         else
-          puts "Wrong password!"
+          puts "Wrong password!" # NHO: these won't display to the user, I think you want a flash notification here
           redirect_to new_session_path
         end
       else
-        puts "That user doesn't exist!"
+        puts "That user doesn't exist!" # NHO: these won't display to the user, I think you want a flash notification here
         redirect_to new_session_path
       end
     end
 
     def destroy
       reset_session
-      puts "You're signed out!"
+      puts "You're signed out!" # NHO: these won't display to the user, I think you want a flash notification here
       redirect_to :root
     end
 
