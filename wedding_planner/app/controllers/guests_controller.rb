@@ -1,5 +1,6 @@
 class GuestsController < ApplicationController
-
+  # NHO: think you can DRY up this controller by making a before_action that will run a method
+  # to redirect_to the root_path unless there is a current_user
   def index
     redirect_to root_path unless @current_user
     @guests = @current_user.guests

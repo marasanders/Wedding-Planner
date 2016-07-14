@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160706171626) do
     t.string   "email"
     t.string   "spouse_email"
     t.boolean  "send_invitation",   default: true
-    t.string   "gift_received"
+    t.string   "gift_received" # NHO: should this be a boolean?
     t.boolean  "thank_you_sent",    default: false
     t.datetime "created_at",                        null: false
     t.datetime "updated_at",                        null: false

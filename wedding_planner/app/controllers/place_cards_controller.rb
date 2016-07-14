@@ -1,5 +1,7 @@
 class PlaceCardsController < ApplicationController
-
+  # NHO: which line is duplicated throughout this controller?
+  # How could you use a before action to find a guest?
+  
   # index
   def index
     @guest = Guest.find(params[:guest_id])
